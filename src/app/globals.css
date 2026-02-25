@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+:root {
+  --mit-red: #750014;
+  --mit-silver: #8b959e;
+}
+
+body {
+  @apply bg-white text-slate-900 antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @apply text-balance tracking-tight text-slate-900;
+}
+
+p {
+  @apply leading-relaxed;
+}
+
+.bg-grid-soft {
+  background-image:
+    linear-gradient(rgba(139, 149, 158, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 149, 158, 0.12) 1px, transparent 1px),
+    radial-gradient(circle at 1px 1px, rgba(139, 149, 158, 0.18) 1px, transparent 0);
+  background-size: 32px 32px, 32px 32px, 18px 18px;
+}
+
+.diagonal-separator {
+  clip-path: polygon(0 0, 100% 24%, 100% 100%, 0 100%);
+}
+
+.card-lift {
+  transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
+}
+
+.card-lift:hover {
+  transform: translateY(-4px);
+}
