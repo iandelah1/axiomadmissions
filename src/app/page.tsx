@@ -1,163 +1,157 @@
+import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
-import { FaqAccordion } from "@/components/FaqAccordion";
-import { Badge } from "@/components/ui/Badge";
-import { Button } from "@/components/ui/Button";
-import { Card } from "@/components/ui/Card";
-import { Container, Section } from "@/components/ui/Container";
 
-const serviceCards = [
-  { title: "Application Architecture", copy: "Engineer school lists and milestone calendars for top-tier cycles." },
-  { title: "Essay Strategy", copy: "Craft authentic narratives that are memorable and intellectually sharp." },
-  { title: "Academic & Activity Positioning", copy: "Translate rigor, impact, and leadership into admissions language." },
-  { title: "Interview Readiness", copy: "Mock interviews and messaging polish tailored to each institution." },
-  { title: "STEM Specialist Support", copy: "Profile optimization for Olympiad, research, maker, and technical applicants." },
-  { title: "Final QA", copy: "Comprehensive review to ensure every submission is submission-perfect." },
+const services = [
+  {
+    title: "Application Strategy",
+    text: "Long-range planning from course rigor and activities to final school list optimization.",
+  },
+  {
+    title: "Essay Development",
+    text: "Narrative architecture, topic ideation, and high-touch editing for authentic personal statements.",
+  },
+  {
+    title: "Interview & Profile Prep",
+    text: "Mock interviews, concise positioning, and evidence-backed accomplishments framing.",
+  },
+  {
+    title: "STEM/Research Positioning",
+    text: "Distinctive guidance for competition, Olympiad, research, and maker portfolio storytelling.",
+  },
 ];
 
-const faqItems = [
-  { q: "When should we begin?", a: "Most families start in grades 9-11 to maximize strategic runway." },
-  { q: "Do you guarantee admissions?", a: "No ethical advisor can promise admission. We optimize every controllable variable." },
-  { q: "Can you support humanities applicants?", a: "Yes. We advise STEM, humanities, social sciences, and interdisciplinary students." },
-  { q: "How personalized is support?", a: "Very personalized. We keep a limited roster to provide deep one-on-one support." },
-  { q: "Do you help with scholarships?", a: "Yes, including merit strategy and fit-based opportunity targeting." },
-  { q: "What about interview prep?", a: "We offer school-specific mock interviews and confidence-building feedback." },
+const process = [
+  "Diagnostic + goal alignment",
+  "Profile audit + strategy blueprint",
+  "Narrative and activities execution",
+  "Essay + application refinement",
+  "Submission readiness and interview prep",
 ];
-
-const icon = (
-  <svg viewBox="0 0 24 24" className="h-5 w-5 text-mit-red" fill="none" stroke="currentColor" strokeWidth="1.8">
-    <path d="M5 12h14M12 5l7 7-7 7" />
-  </svg>
-);
 
 export default function HomePage() {
   return (
-    <div className="overflow-hidden">
-      <section className="relative border-b border-mit-silver/20 bg-white">
-        <div className="pointer-events-none absolute inset-0 bg-grid-soft opacity-45" />
-        <div className="pointer-events-none absolute right-[-20rem] top-[-14rem] h-[30rem] w-[30rem] rounded-full bg-[radial-gradient(circle,_rgba(117,0,20,0.2),_transparent_70%)]" />
-        <Container className="relative py-20 sm:py-28">
-          <Badge>Elite admissions strategy</Badge>
-          <h1 className="mt-6 max-w-4xl text-5xl font-semibold leading-tight sm:text-6xl">Precision guidance for applicants targeting MIT, Stanford, Ivy, and beyond.</h1>
-          <p className="mt-6 max-w-2xl text-lg text-slate-600">Axiom Admissions blends analytical planning with premium narrative coaching so exceptional students stand out authentically.</p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Button href="/contact">Book a Consult</Button>
-            <Button href="/services" variant="secondary">View Services</Button>
+    <div>
+      <section className="border-b border-slate-200 bg-slate-50/60">
+        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-600">Axiom Admissions</p>
+          <h1 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
+            Strategic admissions advising for students targeting MIT, Stanford, and the Ivy League.
+          </h1>
+          <p className="mt-6 max-w-2xl text-lg text-slate-600">
+            We combine analytical rigor with compelling storytelling to help exceptional students present their strongest, most authentic applications.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <Link href="/contact" className="rounded-md bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-700">
+              Book a Consult
+            </Link>
+            <Link href="/services" className="rounded-md border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-800 hover:bg-slate-100">
+              View Services
+            </Link>
           </div>
           <ul className="mt-8 grid gap-3 text-sm text-slate-700 sm:grid-cols-3">
-            <li>✓ Top-university specialization</li>
-            <li>✓ High-touch advisory model</li>
-            <li>✓ Data-informed admissions process</li>
+            <li>✓ Selective-school specialization</li>
+            <li>✓ Data-informed strategy process</li>
+            <li>✓ High-touch, limited client roster</li>
           </ul>
-          <div className="mt-10 grid gap-3 rounded-2xl border border-mit-silver/20 bg-white/80 p-4 backdrop-blur sm:grid-cols-3">
-            {[
-              ["92%", "Top-20 admit outcomes"],
-              ["$3.2M+", "Merit aid secured"],
-              ["40+", "MIT/Stanford/Ivy offers"],
-            ].map(([stat, label]) => (
-              <div key={stat}><p className="text-3xl font-semibold text-mit-red">{stat}</p><p className="text-sm text-slate-600">{label}</p></div>
-            ))}
-          </div>
-        </Container>
+        </div>
       </section>
 
-      <Section>
-        <Container>
-          <Badge>What we do</Badge>
-          <h2 className="mt-4 text-3xl sm:text-4xl">Strategy-first admissions advisory for high achievers.</h2>
-          <p className="mt-4 max-w-4xl text-slate-600">We convert ambition into a concrete application system: profile diagnostics, positioning, essays, and final submission quality control.</p>
-        </Container>
-      </Section>
+      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-semibold tracking-tight">What We Do</h2>
+        <p className="mt-4 max-w-4xl text-slate-600">
+          Axiom Admissions advises high-achieving students with ambitious goals. We engineer a clear admissions strategy, identify the stories only you can tell, and execute every component with precision.
+        </p>
+      </section>
 
-      <Section className="relative bg-slate-50/70">
-        <Container>
-          <Badge>Services</Badge>
-          <h2 className="mt-4 text-3xl sm:text-4xl">High-impact support across the full application lifecycle.</h2>
-          <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {serviceCards.map((card) => (
-              <Card key={card.title} className="group hover:-translate-y-0.5 hover:border-mit-red/30 hover:shadow-premium">
-                <div className="mb-4 inline-flex rounded-full bg-mit-blush p-2">{icon}</div>
-                <h3 className="font-semibold">{card.title}</h3>
-                <p className="mt-2 text-sm text-slate-600">{card.copy}</p>
-              </Card>
-            ))}
-          </div>
-        </Container>
-      </Section>
+      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-semibold tracking-tight">Services Overview</h2>
+        <div className="mt-8 grid gap-5 md:grid-cols-2">
+          {services.map((service) => (
+            <article key={service.title} className="rounded-xl border border-slate-200 p-6">
+              <h3 className="text-xl font-semibold text-slate-900">{service.title}</h3>
+              <p className="mt-2 text-slate-600">{service.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
 
-      <Section>
-        <Container>
-          <Badge>Process</Badge>
-          <h2 className="mt-4 text-3xl sm:text-4xl">A proven five-step operating framework.</h2>
-          <ol className="mt-8 space-y-4">
-            {[
-              "Diagnostic and goal alignment",
-              "Profile audit and strategy blueprint",
-              "Narrative and activities execution",
-              "Essay and application refinement",
-              "Submission readiness and interview prep",
-            ].map((step, i) => (
-              <li key={step} className="flex items-start gap-4 rounded-xl border border-mit-silver/25 p-4">
-                <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-mit-red text-sm font-semibold text-white">{i + 1}</span>
-                <p className="pt-1 text-slate-700">{step}</p>
+      <section className="border-y border-slate-200 bg-slate-50/70">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-semibold tracking-tight">Our Process</h2>
+          <ol className="mt-8 grid gap-4 md:grid-cols-5">
+            {process.map((step, index) => (
+              <li key={step} className="rounded-lg border border-slate-200 bg-white p-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Step {index + 1}</p>
+                <p className="mt-2 text-sm text-slate-700">{step}</p>
               </li>
             ))}
           </ol>
-        </Container>
-      </Section>
+        </div>
+      </section>
 
-      <Section className="bg-slate-50/70">
-        <Container>
-          <Badge>Results</Badge>
-          <h2 className="mt-4 text-3xl sm:text-4xl">Outcomes with polish and perspective.</h2>
-          <div className="mt-8 grid gap-5 sm:grid-cols-3">
-            {[
-              ["92%", "Top-20 admit rate"],
-              ["$3.2M+", "Combined merit aid"],
-              ["40+", "Selective-school offers"],
-            ].map(([v, l]) => (
-              <Card key={v} className="border-mit-red/20"><p className="text-4xl font-semibold text-mit-red">{v}</p><p className="mt-2 text-sm text-slate-600">{l}</p></Card>
-            ))}
+      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-semibold tracking-tight">Results Highlights</h2>
+        <div className="mt-8 grid gap-5 sm:grid-cols-3">
+          <div className="rounded-xl border border-slate-200 p-6">
+            <p className="text-4xl font-semibold">92%</p>
+            <p className="mt-2 text-sm text-slate-600">Admit rate at Top-20 universities among fully advised clients.</p>
           </div>
-          <p className="mt-4 rounded-md border border-amber-200 bg-amber-50 p-3 text-sm text-amber-900">Examples shown for illustration only; outcomes vary by applicant and admissions cycle.</p>
-        </Container>
-      </Section>
+          <div className="rounded-xl border border-slate-200 p-6">
+            <p className="text-4xl font-semibold">$3.2M+</p>
+            <p className="mt-2 text-sm text-slate-600">Combined merit aid offers earned by recent cohorts.</p>
+          </div>
+          <div className="rounded-xl border border-slate-200 p-6">
+            <p className="text-4xl font-semibold">40+</p>
+            <p className="mt-2 text-sm text-slate-600">Offers from MIT, Stanford, and Ivy League institutions.</p>
+          </div>
+        </div>
+        <p className="mt-3 text-sm text-slate-500">Examples shown for illustration; outcomes vary.</p>
+      </section>
 
-      <Section>
-        <Container>
-          <Badge>Testimonials</Badge>
-          <h2 className="mt-4 text-3xl sm:text-4xl">Families describe a high-trust, high-performance experience.</h2>
+      <section className="border-y border-slate-200 bg-slate-50/70">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-semibold tracking-tight">Testimonials</h2>
           <div className="mt-8 grid gap-5 md:grid-cols-3">
-            {[
-              ["AL", "Parent of MIT admit"],
-              ["JR", "Stanford engineering admit"],
-              ["SK", "Ivy League humanities admit"],
-            ].map(([initials, role]) => (
-              <Card key={initials} className="bg-white">
-                <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-mit-blush font-semibold text-mit-red">{initials}</div>
-                <p className="text-slate-600">“Axiom turned a stressful process into a clear system. The strategy and coaching were elite.”</p>
-                <p className="mt-4 text-sm font-medium text-slate-800">{role}</p>
-              </Card>
+            {["Parent of MIT admit", "Stanford engineering admit", "Ivy League humanities admit"].map((label) => (
+              <blockquote key={label} className="rounded-xl border border-slate-200 bg-white p-6">
+                <p className="text-slate-600">
+                  “Axiom gave us structure, confidence, and a thoughtful strategy. Every piece of the application felt intentional.”
+                </p>
+                <footer className="mt-4 text-sm font-medium text-slate-800">— {label}</footer>
+              </blockquote>
             ))}
           </div>
-        </Container>
-      </Section>
+        </div>
+      </section>
 
-      <Section className="bg-slate-50/70">
-        <Container>
-          <Badge>FAQ</Badge>
-          <h2 className="mt-4 text-3xl sm:text-4xl">Common questions</h2>
-          <div className="mt-8"><FaqAccordion items={faqItems} /></div>
-        </Container>
-      </Section>
+      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-semibold tracking-tight">FAQ</h2>
+        <div className="mt-8 space-y-4">
+          {[
+            ["When should we start?", "Most families begin in 9th-11th grade for maximum strategic runway."],
+            ["Do you only work with STEM applicants?", "No. We support STEM, humanities, arts, and interdisciplinary applicants."],
+            ["Can you help with early strategy and long-term planning?", "Yes. We build multi-year plans covering academics, activities, and positioning."],
+            ["How personalized is advising?", "Highly personalized. We keep a limited roster for deep, 1:1 engagement."],
+            ["Do you guarantee admissions?", "No. Ethical advising cannot guarantee outcomes; we optimize every controllable factor."],
+            ["Do you offer interview prep?", "Yes, including school-specific mocks and feedback loops."],
+          ].map(([q, a]) => (
+            <article key={q} className="rounded-lg border border-slate-200 p-5">
+              <h3 className="font-semibold text-slate-900">{q}</h3>
+              <p className="mt-2 text-sm text-slate-600">{a}</p>
+            </article>
+          ))}
+        </div>
+      </section>
 
-      <Section className="relative border-t border-mit-silver/20">
-        <Container className="max-w-3xl">
-          <Badge>Contact</Badge>
-          <h2 className="mt-4 text-3xl sm:text-4xl">Build your admissions roadmap.</h2>
-          <p className="mt-3 text-slate-600">Tell us your goals, timeline, and target programs. We&apos;ll suggest next steps.</p>
-          <div className="mt-8"><ContactForm /></div>
-        </Container>
-      </Section>
+      <section className="border-t border-slate-200 bg-slate-50/60">
+        <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-semibold tracking-tight">Contact Axiom Admissions</h2>
+          <p className="mt-3 text-slate-600">Share your goals and timeline. We&apos;ll recommend the best-fit advising pathway.</p>
+          <div className="mt-8">
+            <ContactForm />
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

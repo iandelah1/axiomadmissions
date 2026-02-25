@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Container } from "@/components/ui/Container";
 
 const links = [
   { href: "/about", label: "About" },
@@ -10,26 +9,31 @@ const links = [
 
 export function SiteFooter() {
   return (
-    <footer className="relative overflow-hidden border-t border-mit-silver/25 bg-slate-50">
-      <div className="pointer-events-none absolute inset-0 bg-grid-soft opacity-50" />
-      <Container className="relative grid gap-8 py-10 lg:grid-cols-3">
+    <footer className="border-t border-slate-200 bg-slate-50">
+      <div className="mx-auto grid w-full max-w-6xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-3 lg:px-8">
         <div>
-          <p className="text-base font-semibold"><span className="text-mit-red">Axiom</span> Admissions</p>
-          <p className="mt-2 text-sm text-slate-600">Mission: bring elite strategy and ethical guidance to ambitious students worldwide.</p>
+          <p className="text-base font-semibold text-slate-900">Axiom Admissions</p>
+          <p className="mt-2 text-sm text-slate-600">
+            Precision strategy for ambitious students targeting the world&apos;s most selective universities.
+          </p>
         </div>
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-mit-silver">Navigate</p>
+          <p className="text-sm font-semibold uppercase tracking-wide text-slate-700">Navigate</p>
           <ul className="mt-3 space-y-2">
             {links.map((link) => (
-              <li key={link.href}><Link href={link.href} className="text-sm text-slate-600 hover:text-mit-red">{link.label}</Link></li>
+              <li key={link.href}>
+                <Link href={link.href} className="text-sm text-slate-600 hover:text-slate-900">
+                  {link.label}
+                </Link>
+              </li>
             ))}
           </ul>
         </div>
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-mit-silver">Contact</p>
+          <p className="text-sm font-semibold uppercase tracking-wide text-slate-700">Contact</p>
           <p className="mt-3 text-sm text-slate-600">hello@axiomadmissions.org</p>
         </div>
-      </Container>
+      </div>
     </footer>
   );
 }
