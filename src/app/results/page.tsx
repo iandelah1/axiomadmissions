@@ -1,39 +1,33 @@
-import { Badge } from "@/components/ui/Badge";
-import { Card } from "@/components/ui/Card";
-import { Container, Section } from "@/components/ui/Container";
-import { StatCard } from "@/components/ui/StatCard";
-
-export const metadata = { title: "Results" };
+export const metadata = {
+  title: "Results",
+};
 
 export default function ResultsPage() {
   return (
-    <div>
-      <section className="relative overflow-hidden border-b border-mit-silver/20 bg-white">
-        <div className="pointer-events-none absolute inset-0 bg-grid-soft opacity-35" />
-        <Container className="relative py-20 sm:py-24">
-          <Badge>Results</Badge>
-          <h1 className="mt-4 max-w-4xl text-5xl font-semibold leading-tight sm:text-6xl">Outcomes that reflect disciplined strategy.</h1>
-          <p className="mt-5 max-w-2xl text-lg text-slate-600">Our clients have earned offers from MIT, Stanford, Ivy League schools, and other selective institutions.</p>
-        </Container>
-      </section>
+    <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+      <h1 className="text-4xl font-semibold tracking-tight text-slate-900">Results</h1>
+      <p className="mt-4 text-slate-600">
+        Our clients have earned offers from MIT, Stanford, Ivy League institutions, and other top-ranked universities through disciplined strategy and thoughtful execution.
+      </p>
 
-      <Section className="bg-slate-50/75">
-        <Container>
-          <div className="grid gap-4 sm:grid-cols-3">
-            <StatCard value="92%" label="Top-20 outcomes" caption="fully advised cohort examples" />
-            <StatCard value="$3.2M+" label="Merit aid offers" caption="recent cycle aggregate" />
-            <StatCard value="40+" label="Selective-school offers" caption="MIT, Stanford, Ivy + peers" />
-          </div>
+      <div className="mt-10 grid gap-5 sm:grid-cols-3">
+        <article className="rounded-xl border border-slate-200 p-6">
+          <p className="text-4xl font-semibold">Top-20 Focus</p>
+          <p className="mt-2 text-sm text-slate-600">Majority of clients target highly selective programs across the US and UK.</p>
+        </article>
+        <article className="rounded-xl border border-slate-200 p-6">
+          <p className="text-4xl font-semibold">Merit Aid</p>
+          <p className="mt-2 text-sm text-slate-600">Students also secure significant scholarship outcomes at fit-aligned institutions.</p>
+        </article>
+        <article className="rounded-xl border border-slate-200 p-6">
+          <p className="text-4xl font-semibold">Profile Growth</p>
+          <p className="mt-2 text-sm text-slate-600">Beyond admissions, students gain confidence, communication skills, and strategic clarity.</p>
+        </article>
+      </div>
 
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {["MIT", "Stanford", "Harvard", "Princeton", "Yale", "Columbia", "UPenn", "Duke"].map((s) => (
-              <Card key={s} className="card-lift p-4 text-center font-semibold hover:border-mit-red/30">{s}</Card>
-            ))}
-          </div>
-
-          <p className="mt-8 rounded-lg border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900">Disclaimer: outcomes vary by student profile, competitiveness of each cycle, and institutional priorities. Prior outcomes do not guarantee future admissions results.</p>
-        </Container>
-      </Section>
+      <div className="mt-10 rounded-xl border border-amber-200 bg-amber-50 p-5 text-sm text-amber-900">
+        Disclaimer: outcomes vary by student profile, competitiveness of each cycle, and institutional priorities. Prior outcomes do not guarantee future admissions results.
+      </div>
     </div>
   );
 }

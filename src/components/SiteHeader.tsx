@@ -1,5 +1,3 @@
-import { Button } from "@/components/ui/Button";
-import { Container } from "@/components/ui/Container";
 import Link from "next/link";
 
 const navItems = [
@@ -11,22 +9,25 @@ const navItems = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-mit-silver/20 bg-white/90 backdrop-blur-xl">
-      <Container className="flex items-center justify-between py-4">
-        <Link href="/" className="text-lg font-bold tracking-tight text-slate-900">
-          <span className="text-mit-red">Axiom</span> Admissions
+    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur">
+      <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        <Link href="/" className="text-lg font-semibold tracking-tight text-slate-900">
+          Axiom Admissions
         </Link>
-        <nav className="hidden items-center gap-7 md:flex">
+        <nav className="hidden items-center gap-8 md:flex">
           {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className="text-sm font-medium text-slate-700 transition hover:text-mit-red">
+            <Link key={item.href} href={item.href} className="text-sm font-medium text-slate-700 transition hover:text-slate-900">
               {item.label}
             </Link>
           ))}
         </nav>
-        <Button href="/contact" variant="primary" className="px-4 py-2">
+        <Link
+          href="/contact"
+          className="rounded-md bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-700"
+        >
           Book a Consult
-        </Button>
-      </Container>
+        </Link>
+      </div>
     </header>
   );
 }
