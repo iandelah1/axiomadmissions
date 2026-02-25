@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+:root {
+  --mit-red: #750014;
+  --mit-silver: #8b959e;
+}
+
+body {
+  @apply bg-white text-slate-900 antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @apply tracking-tight text-slate-900;
+}
+
+p {
+  @apply leading-relaxed;
+}
+
+.section-angle::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 30px;
+  background: linear-gradient(to right bottom, transparent 48%, rgba(139, 149, 158, 0.08) 50%, transparent 52%);
+}
+
+.bg-grid-soft {
+  background-image: radial-gradient(circle at 1px 1px, rgba(139, 149, 158, 0.2) 1px, transparent 0);
+  background-size: 22px 22px;
+}
